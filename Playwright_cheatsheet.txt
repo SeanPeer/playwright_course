@@ -17,3 +17,7 @@ test.skip   - skipping on a specific test
 test.only   - running only this specific test case
 
 npx playwright test --ui        - running with UI mode which can analayze every line that has been done in the code 
+
+npx playwright test --project=chromium --trace on       - trace mode 
+
+npx playwright test --debug     - debugging step by step 
