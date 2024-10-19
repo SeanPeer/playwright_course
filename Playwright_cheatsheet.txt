@@ -1,0 +1,19 @@
+npm init playwright@latest   	- Initialize playwright project 
+
+npx playwright test 		- run all tests 
+
+npx playwright show-report 	- opens a web tab with the tests report
+
+npx playwright test --project=chromium 	- runing the tests only on chrome
+
+--headed 	- runs the tests with visible web page
+
+npx playwright test example.spec.ts     - running a specific test file
+
+npx playwright test -g "has title"      - running a specific test case
+
+test.skip   - skipping on a specific test 
+
+test.only   - running only this specific test case
+
+npx playwright test --ui        - running with UI mode which can analayze every line that has been done in the code 
