@@ -27,16 +27,36 @@ test("Create New User", async ({ page }) => {
     job: "leader",
   };
 
-  const expected_response = {
-    name: "morpheus",
-    job: "leader",
-    id: "393",
-    createdAt: "2024-10-25T12:44:26.086Z",
-  };
   const resposne = await axios.post("https://reqres.in/api/users", data);
 
   expect(resposne.status).toEqual(201);
-  
+
+  //validating with getting th whole array of users 
+});
+
+test("edit a given user", async ({ page }) => {
+  const user_update = {
+    name: "morpheus",
+    job: "zion resident",
+  };
+
+  const resposne = await axios.put("https://reqres.in/api/users/2",user_update)
+
+  expect(resposne.status).toEqual(200)
+
+  //can validate with getting the whole array of users
 });
 
 
+test("Delete a given user", async ({ page }) => {
+  const user_update = {
+    name: "morpheus",
+    job: "zion resident",
+  };
+
+  const resposne = await axios.delete("https://reqres.in/api/users/2")
+
+  expect(resposne.status).toEqual(204)
+
+  //can validate with getting the whole array of users and see that the suer is not there any more 
+});
